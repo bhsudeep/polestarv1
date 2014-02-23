@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="sessionFactory">
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+
+			 <property name="hibernate.connection.password">sql123</property> 
+			<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=STAB_DEV;Catalog=STAB_DEV</property> 
+			<property name="hibernate.connection.username">sa</property>
+			
+			
+			<!--  <property name="hibernate.connection.password">sql123</property> 
+			<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=STAB_DEV;Catalog=STAB_DEV</property> 
+			<property name="hibernate.connection.username">sa</property> --> 
+			
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.connection.autocommit">true</property>
+		
+		<mapping class="com.sample.domain.TbFaq"/>
+		<mapping class="com.sample.domain.TbLocationImages"/>
+		<mapping class="com.sample.domain.TbProgram"/>
+		<mapping class="com.sample.domain.TbRole"/>
+		<mapping class="com.sample.domain.TbTravelExpense"/>
+		<mapping class="com.sample.domain.TbTravelPlan"/>
+		<mapping class="com.sample.domain.TbUniversity"/>
+		<mapping class="com.sample.domain.TbUser"/>
+		<mapping class="com.sample.domain.TbUserProgram"/>
+		<mapping class="com.sample.domain.TbUserRole"/>
+		<mapping class="com.sample.domain.TbUsrProfileImages"/>
+		<mapping class="com.sample.domain.TbWeekend"/>
+
+
+	</session-factory>
+	
+	
+
+</hibernate-configuration>

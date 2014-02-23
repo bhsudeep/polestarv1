@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version='2.0'
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="EasyAdvise">
+		<class>com.elearn.domain.TbElnAttendance</class>
+		<class>com.elearn.domain.TbElnAuthorizationGroup</class>
+		<class>com.elearn.domain.AuthorizationGroupRank</class>
+		<class>com.elearn.domain.TbElnAuthorizationGroupRank</class>
+		<class>com.elearn.domain.TbElnBusinessTitle</class>
+		<class>com.elearn.domain.TbElnCategory</class>
+		<class>com.elearn.domain.TbElnCategorySubcategory</class>
+		<class>com.elearn.domain.TbElnCity</class>
+		<!--<class>com.elearn.domain.Department</class> -->
+		<class>com.elearn.domain.Designation</class>
+		<class>com.elearn.domain.TbElnFeedbackAnswer</class>
+		<class>com.elearn.domain.TbElnFeedbackAnswerComplexValue</class>
+		<class>com.elearn.domain.TbElnFeedbackAnswerOption</class>
+		<class>com.elearn.domain.TbElnFeedbackAnswerValueType</class>
+		<class>com.elearn.domain.TbElnFeedbackQuestion</class>
+		<class>com.elearn.domain.Grade</class>
+		<class>com.elearn.domain.TbElnLocation</class>
+		<class>com.elearn.domain.Rank</class>
+		<class>com.elearn.domain.RankGrade</class>
+		<class>com.elearn.domain.TbElnRole</class>
+		<class>com.elearn.domain.TbElnRoom</class>
+		<class>com.elearn.domain.TbElnStatus</class>
+		<class>com.elearn.domain.TbElnSubcategory</class>
+		<class>com.elearn.domain.TbElnTraining</class>
+		<class>com.elearn.domain.TbElnTrainingAccessGroup</class>
+		<class>com.elearn.domain.TbElnTrainingAction</class>
+		<class>com.elearn.domain.TbElnTrainingProgram</class>
+		<class>com.elearn.domain.TbElnTrainingRank</class>
+		<class>com.elearn.domain.TbElnUploadMaster</class>
+		<class>com.elearn.domain.TbElnUserCategory</class>
+		<class>com.elearn.domain.TbElnUserRole</class>
+		<class>com.elearn.domain.TbElnUserSubcategory</class>
+		<class>com.elearn.domain.TbElnUserTraining</class>
+		<class>com.elearn.domain.TbElnWorkflow</class>
+		<class>com.elearn.domain.VW_ELN_CounselorQueue</class>
+		<class>com.elearn.domain.VW_ELN_open_calendar</class>
+		<class>com.elearn.domain.VW_ELN_Rankwise_training_Key</class>
+		<class>com.elearn.domain.VW_ELN_Rankwise_training</class>
+		<class>com.elearn.domain.PeopleMaster</class>
+		<class>com.elearn.domain.ServiceLine</class>
+		<class>com.elearn.domain.SubServiceLine</class>
+
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.directwebremoting.org/schema/spring-dwr
+    http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+	<context:component-scan base-package="com.sample.controller" />
+	<context:annotation-config />
+
+
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="requestInterceptor" />
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+
+	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+	<!--<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles-defs.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	--><!--<bean id="viewResolver1"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles2.TilesView" />
+		<property name="order" value="1" />
+	</bean>
+
+	--><bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="com.eyautomation.exception.EZAdviceException">error</prop>
+			</props>
+		</property>
+	</bean>
+
+
+
+
+	<bean id="requestInterceptor" class="com.sample.web.RequestInterceptor" />
+
+
+	<bean id="dwrHandlerMappings"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="order" value="2" />
+		<property name="alwaysUseFullPath" value="true"></property>
+		<property name="mappings">
+			<props>
+				<prop key="/dwr/**/*">dwrController</prop>
+				<prop key="/dwr/*">dwrController</prop>
+			</props>
+		</property>
+	</bean>
+
+	<dwr:controller id="dwrController" debug="false">
+		<dwr:config-param name="activeReverseAjaxEnabled"
+			value="true" />
+		<dwr:config-param name="crossDomainSessionSecurity"
+			value="false" />
+	</dwr:controller>
+
+	 <dwr:configuration>
+		<dwr:convert type="bean" class="java.util.*" />
+		
+	</dwr:configuration>
+
+	<!--<bean id="ajaxController" class="com.eyautomation.controller.AjaxController"
+		scope="session">
+		<dwr:remote javascript="JsAJAXController">
+		
+		</dwr:remote>
+		
+	</bean> -->
+	
+</beans>

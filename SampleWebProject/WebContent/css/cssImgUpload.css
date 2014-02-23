@@ -1,0 +1,14 @@
+
+.step2, .error {
+    display: none;
+}
+.error {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+.info {
+    font-size: 14px;
+}
+
+

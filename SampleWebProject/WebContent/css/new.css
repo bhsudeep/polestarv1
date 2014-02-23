@@ -1,0 +1,49 @@
+
+.person {
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    height: 50px;
+    margin-left: -27px;
+    margin-top: -27px;
+    position: absolute;
+    width: 50px;
+    z-index: 300;
+}
+
+  
+.hoverinfo {
+    font-family: arial,sans-serif;
+    margin-left: -55px;
+    position: absolute;
+    text-align: center;
+    width: 160px;
+    z-index: 550;
+}
+
+.hoverinfo .inner {
+    background: none repeat scroll 0 0 #ffffff;
+    border-radius: 3px;
+    bottom: 0;
+    padding: 10px;
+    position: absolute;
+    width: 140px;
+    z-index: 551;
+}
+.hoverinfo .name {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #404040;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 14px;
+    margin: 0 0 3px;
+    padding: 0;
+}
+
+.hoverinfo .model {
+    color: #6D8092;
+    font: 300 13px arial,sans-serif;
+    margin: 0;
+    padding: 0;
+}
